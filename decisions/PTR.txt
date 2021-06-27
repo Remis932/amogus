@@ -1,0 +1,128 @@
+#Pontifical Italy edits
+political_decisions = {
+	claim_constantinople = {
+		potential = {
+		tag = PTR
+		NOT={has_country_flag=claimed_constantinople}
+		}
+		
+		allow = {
+			
+				OR={is_greater_power = yes
+				is_secondary_power = yes}
+			
+		}
+		
+		effect = {
+			prestige = 10
+						
+			
+			860 = {add_core = PTR}
+            858 = {add_core = PTR}					
+	
+			relation = {
+	who = TUR
+	value = -100
+}
+
+  set_country_flag = claimed_constantinople
+			
+		}
+	}
+	little_paris = {
+		potential = {
+			OR={tag = WAL
+			tag=ROM
+			}
+			 NOT={has_country_flag=lilparis}
+			 664={owned_by=THIS}
+		}
+		ai_will_do = { factor = 1 }
+		allow = {
+		medicine=1
+		}
+		
+		effect = {
+			prestige = 10
+			664= {add_province_modifier = { name = lilparis duration = 3650 }}
+			treasury = -50000
+			capital=664
+			set_country_flag = lilparis
+			}
+			
+			
+		}
+	claim_aegean_coast = {
+		potential = {
+		tag = PTR
+	    is_greater_power = yes
+		NOT={has_country_flag=claimed_coast}
+		has_country_flag=claimed_constantinople
+		}
+		
+		allow = {
+			
+			is_greater_power = yes
+			860 = {owned_by=PTR}
+			858 = {owned_by=PTR}
+		}
+		
+		effect = {
+			prestige = 10
+											
+	861={add_core=PTR}
+	862={add_core=PTR}
+	863={add_core=PTR}
+	867={add_core=PTR}
+	868={add_core=PTR}
+	866={add_core=PTR}
+	865={add_core=PTR}
+	864={add_core=PTR}
+	861={add_core=PTR}
+	869={add_core=PTR}
+	872={add_core=PTR}
+	871={add_core=PTR}
+	870={add_core=PTR}
+			relation = {
+	who = TUR
+	value = -100
+}
+			
+			set_country_flag = claimed_coast
+		}
+	}
+	recentralize_the_patriarchate = {
+		potential = {
+		tag = PTR
+	    
+		NOT={has_country_flag=recentralized}
+		has_country_flag=claimed_constantinople
+		}
+		
+		allow = {
+		is_greater_power = yes
+ AND={		PTR={all_core=owned_by=PTR}
+			state_n_government=1
+			is_greater_power = yes
+			860 = {owned_by=PTR}
+			858 = {owned_by=PTR}
+	PTR={is_our_vassal = UKR
+	is_our_vassal = ROM
+	is_our_vassal = ALB
+	is_our_vassal = BUL}
+	}
+		}
+		
+		effect = {
+			prestige = 30
+			PTR={inherit=UKR
+            inherit=ROM			
+			inherit=ALB
+            inherit=BUL
+			set_country_flag = recentralized
+			}
+			
+		}
+	}
+
+}

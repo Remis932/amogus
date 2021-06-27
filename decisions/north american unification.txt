@@ -1,0 +1,483 @@
+political_decisions={
+claim_north_american_hegemony = {
+		potential = {
+			OR= {tag = LOU
+			tag = USA
+			tag = CAL
+			tag = CAN
+			tag = MEX
+			}
+			NOT = { has_global_flag = claimed_hegemony_over_North_America}
+		}
+		ai_will_do = { factor = 1 }
+		allow = {
+			is_greater_power = yes
+			all_core={owned_by=THIS}
+			OR={AND={139={owned_by=THIS}
+			68={owned_by=THIS}
+			206={owned_by=THIS}
+			137={owned_by=THIS}
+			84={owned_by=THIS}
+			}
+			AND={68={owner = {
+                            in_sphere = THIS
+                        }}
+				206={owner = {
+                            in_sphere = THIS
+                        }}
+				137={owner = {
+                            in_sphere = THIS
+                        }}
+				84={owner = {
+                            in_sphere = THIS
+                        }}
+					}
+			}			
+		}
+		
+		effect = {
+			prestige = 10
+			badboy = 1
+			LOU = {
+			any_owned={
+			limit={continent = north_america}
+			add_core=THIS
+			}
+			
+			}
+			USA = {
+			any_owned={
+			limit={continent = north_america}
+			add_core=THIS
+			}
+
+			}
+			NET = {
+			any_owned={
+			limit={continent = north_america}
+			add_core=THIS
+			}
+
+			}
+			CAL = {
+			any_owned={
+			limit={continent = north_america}
+			add_core=THIS
+			}
+
+			}
+			MEX = {
+			any_owned={
+			limit={continent = north_america}
+			add_core=THIS
+			}
+			}
+			X39 = {
+			any_owned={
+			limit={continent = north_america}
+						add_core=THIS
+			}
+
+			}
+			CAN = {
+			any_owned={
+			limit={continent = north_america}
+			add_core=THIS
+			}
+			
+			}
+			add_accepted_culture=nieuwereld
+			add_accepted_culture=americano
+			add_accepted_culture=mexican
+			
+			set_global_flag = claimed_hegemony_over_North_America
+			set_country_flag = claimed_hegemony_over_North_America
+			}
+			
+		}
+integrate_LOU = {
+		potential = {
+		    NOT={tag=LOU}
+			LOU={in_sphere=THIS}
+			has_country_flag = claimed_hegemony_over_North_America
+			NOT = { has_country_flag = LOUintegrated}
+			}
+			
+		
+		ai_will_do = { factor = 1 }
+		allow = {
+		state_n_government=1
+			is_greater_power = yes
+						
+		}
+		
+		effect = {
+			prestige = 10
+			badboy = 1
+			inherit=LOU
+			set_country_flag = LOUintegrated
+			}
+			
+		}
+integrate_MEX = {
+		potential = {
+		    NOT={tag=MEX}
+			MEX={in_sphere=THIS}
+			has_country_flag = claimed_hegemony_over_North_America
+			NOT = { has_country_flag = MEXintegrated}
+			}
+			
+		
+		ai_will_do = { factor = 1 }
+		allow = {
+		state_n_government=1
+			is_greater_power = yes
+						
+		}
+		
+		effect = {
+			prestige = 10
+			badboy = 1
+			inherit=MEX
+			set_country_flag = MEXintegrated
+			}
+			
+		}
+integrate_CAN = {
+		potential = {
+		    NOT={tag=CAN}
+			CAN={in_sphere=THIS}
+			has_country_flag = claimed_hegemony_over_North_America
+			NOT = { has_country_flag = CANintegrated}
+			}
+			
+		
+		ai_will_do = { factor = 1 }
+		allow = {
+		state_n_government=1
+			is_greater_power = yes
+						
+		}
+		
+		effect = {
+			prestige = 10
+			badboy = 1
+			inherit=CAN
+			set_country_flag = CANintegrated
+			}
+			
+		}
+integrate_CAL = {
+		potential = {
+		    NOT={tag=CAL}
+			CAL={in_sphere=THIS}
+			has_country_flag = claimed_hegemony_over_North_America
+			NOT = { has_country_flag = CALintegrated}
+			}
+			
+		
+		ai_will_do = { factor = 1 }
+		allow = {
+		state_n_government=1
+			is_greater_power = yes
+						
+		}
+		
+		effect = {
+			prestige = 10
+			badboy = 1
+			inherit=CAL
+			set_country_flag = CALintegrated
+			}
+			
+		}	
+integrate_USA = {
+		potential = {
+		    NOT={tag=USA}
+			USA={in_sphere=THIS}
+			has_country_flag = claimed_hegemony_over_North_America
+			NOT = { has_country_flag = USAintegrated}
+			}
+			
+		
+		ai_will_do = { factor = 1 }
+		allow = {
+		    state_n_government=1
+			is_greater_power = yes
+						
+		}
+		
+		effect = {
+			prestige = 10
+			badboy = 1
+			inherit=USA
+			set_country_flag = USAintegrated
+			}
+			
+		}	
+	new_life_in_the_new_world = {
+		picture = new_life
+		potential = {
+			OR = {
+				capital_scope = { continent = north_america }
+				capital_scope = { continent = south_america }
+				tag = X40
+			}
+			NOT = { has_country_flag = come_to_the_new_world }
+			number_of_states = 2
+			num_of_ports = 1
+			is_vassal = no
+			civilized = yes
+		}
+		
+		allow = {
+			war = no
+			state_n_government = 1
+			slavery = no_slavery
+			public_meetings = yes_meeting
+			press_rights = free_press
+			vote_franschise = universal_voting
+			NOT = {citizenship_policy = residency }
+			OR = {
+				government = democracy
+				government = hms_government
+			}
+			money = 25000
+		}
+		
+		effect = {
+			set_country_flag = come_to_the_new_world
+			treasury = -25000
+			add_country_modifier = { name = small_immigration_boom duration = 7250 }
+		}
+	}
+##################
+##POP BOOM########
+##################	
+
+	new_antwerp_pop_boom = {
+		picture = new_life
+		potential = {
+			capital_scope={continent = north_america}
+			139={owned_by=THIS}
+			NOT = { has_country_flag = new_antwerp_booms }
+			number_of_states = 2
+			num_of_ports = 1
+			is_vassal = no
+			civilized = yes
+		}
+		
+		allow = {
+			war = no
+			slavery = no_slavery
+			OR = {
+				government = democracy
+				government = hms_government
+			}
+		}
+		
+		effect = {
+			set_country_flag = new_antwerp_booms
+			139={add_province_modifier = { name = niew_antwerp_boom duration = 3625 } }
+		}
+	}
+	detroit_boom = {
+		picture = new_life
+		potential = {
+			capital_scope={continent = north_america}
+			175={owned_by=THIS}
+			NOT = { has_country_flag = detroit_booms }
+			number_of_states = 2
+			num_of_ports = 1
+			is_vassal = no
+			civilized = yes
+		}
+		
+		allow = {
+			war = no
+			167={owned_by=THIS}
+			slavery = no_slavery
+			OR = {
+				government = democracy
+				government = hms_government
+			}
+		}
+		
+		effect = {
+			set_country_flag = detroit_booms
+			175={add_province_modifier = { name = detroit_boom duration = 4225 } }
+		    175={add_core=THIS}
+			
+			any_pop = {
+				limit = {
+					has_pop_culture = nieuwereld
+						location = {
+								province_id = 167
+						}
+					}
+				
+				reduce_pop = 0.95
+				consciousness = 2
+				militancy = 1
+				move_pop = 175
+			}
+		}
+	}
+	montreal_boom = {
+		picture = new_life
+		potential = {
+			capital_scope={continent = north_america}
+			58={owned_by=THIS}
+			NOT = { has_country_flag = montreal_booms }
+			number_of_states = 2
+			num_of_ports = 1
+			is_vassal = no
+			civilized = yes
+		}
+		
+		allow = {
+			war = no
+			slavery = no_slavery
+			OR = {
+				government = democracy
+				government = hms_government
+			}
+		}
+		
+		effect = {
+			set_country_flag = montreal_booms
+			58={add_province_modifier = { name = montreal_boom duration = 3625 } }
+		}
+	}
+	san_fransisco_boom = {
+		picture = new_life
+		potential = {
+			capital_scope={continent = north_america}
+			84={owned_by=THIS}
+			NOT = { has_country_flag = san_fransisco_booms }
+			number_of_states = 2
+			num_of_ports = 1
+			is_vassal = no
+			civilized = yes
+		}
+		
+		allow = {
+			war = no
+			slavery = no_slavery
+			OR = {
+				government = democracy
+				government = hms_government
+			}
+		}
+		
+		effect = {
+			set_country_flag = san_fransisco_booms
+			84={add_province_modifier = { name = san_fransisco_boom duration = 4225 } }
+		}
+	}
+	mexico_city_boom = {
+		picture = new_life
+		potential = {
+			capital_scope={continent = north_america}
+			2172={owned_by=THIS}
+			NOT = { has_country_flag = mexico_city_booms }
+			number_of_states = 2
+			num_of_ports = 1
+			is_vassal = no
+			civilized = yes
+		}
+		
+		allow = {
+			war = no
+			slavery = no_slavery
+			OR = {
+				government = democracy
+				government = hms_government
+			}
+		}
+		
+		effect = {
+			set_country_flag = mexico_city_booms
+			2172={add_province_modifier = { name = mexico_city_boom duration = 3625 } }
+		}
+	}
+	san_antonio_boom = {
+		picture = new_life
+		potential = {
+			capital_scope={continent = north_america}
+			137={owned_by=THIS}
+			NOT = { has_country_flag = san_antonio_booms }
+			number_of_states = 2
+			num_of_ports = 1
+			is_vassal = no
+			civilized = yes
+		}
+		
+		allow = {
+			war = no
+			slavery = no_slavery
+			OR = {
+				government = democracy
+				government = hms_government
+			}
+		}
+		
+		effect = {
+			set_country_flag = san_antonio_booms
+			137={add_province_modifier = { name = san_antonio_boom duration = 3625 } }
+		}
+	}
+	philadelphia_boom = {
+		picture = new_life
+		potential = {
+			capital_scope={continent = north_america}
+			223={owned_by=THIS}
+			NOT = { has_country_flag = philadelphia_booms }
+			number_of_states = 2
+			num_of_ports = 1
+			is_vassal = no
+			civilized = yes
+		}
+		
+		allow = {
+			war = no
+			slavery = no_slavery
+			OR = {
+				government = democracy
+				government = hms_government
+			}
+		}
+		
+		effect = {
+			set_country_flag = philadelphia_booms
+			223={add_province_modifier = { name = philadelphia_boom duration = 3625 } }
+		}
+	}
+	boston_boom = {
+		picture = new_life
+		potential = {
+			capital_scope={continent = north_america}
+			243={owned_by=THIS}
+			NOT = { has_country_flag = boston_booms }
+			number_of_states = 2
+			num_of_ports = 1
+			is_vassal = no
+			civilized = yes
+		}
+		
+		allow = {
+			war = no
+			slavery = no_slavery
+			OR = {
+				government = democracy
+				government = hms_government
+			}
+		}
+		
+		effect = {
+			set_country_flag = boston_booms
+			243={add_province_modifier = { name = boston_boom duration = 3625 } }
+		}
+	}
+	
+}

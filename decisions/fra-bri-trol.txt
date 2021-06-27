@@ -1,0 +1,46 @@
+political_decisions = {
+renovate_paris = {
+		potential = {
+			425={owned_by=THIS}
+			 NOT={has_country_flag=renovated_paris}
+		}
+		ai_will_do = { factor = 1 }
+		allow = {
+		medicine=1
+			money = 50000
+		}
+		
+		effect = {
+			prestige = 10
+			425 = {add_province_modifier = { name = paris_renovated duration = 3650 }}
+			treasury = -50000
+			set_country_flag = renovated_paris
+			}
+			
+			
+		}
+renovate_london = {
+		potential = {
+			300={owned_by=THIS}
+			293={owned_by=THIS}
+			 NOT={has_country_flag=renovated_london}
+		}
+		ai_will_do = { factor = 1 }
+		allow = {
+		medicine=1
+			money = 100000
+		}
+		
+		effect = {
+			prestige = 10
+			300 = {add_province_modifier = { name = london_renovated duration = 3650 }}
+			293 = {add_province_modifier = { name = london_renovated duration = 3650 }}
+			treasury = -50000
+			set_country_flag = renovated_london
+			}
+			
+			
+		}
+
+
+}

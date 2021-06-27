@@ -1,0 +1,158 @@
+political_decisions = {
+push_east = {
+		potential = {
+			tag = RUS
+			NOT = { has_country_flag = russia_pushes }
+		}
+		ai_will_do = { factor = 1 }
+		allow = {
+			is_greater_power = yes
+			all_core = {owned_by=RUS}
+		}
+		
+		effect = {
+			prestige = 5
+			badboy = 10
+			987 = {
+				add_core = RUS
+			}
+			2700 = {
+				add_core = RUS
+			}
+			1029 = {
+				add_core = RUS
+			}
+			1031 = {
+				add_core = RUS
+			}
+			1026 = {
+				add_core = RUS
+			}
+			1042 = {
+				add_core = RUS
+			}
+			1039 = {
+				add_core = RUS
+			}
+			1037 = {
+				add_core = RUS
+			}
+			1038 = {
+				add_core = RUS
+			}
+			1037 = {
+				add_core = RUS
+			}
+			1040 = {
+				add_core = RUS
+			}
+			1036 = {
+				add_core = RUS
+			}
+			1037 = {
+				add_core = RUS
+			}
+			1182 = {
+				add_core = RUS
+			}
+			1030 = {
+				add_core = RUS
+			}
+			1033 = {
+				add_core = RUS
+			}
+			1044 = {
+				add_core = RUS
+			}
+			2610 = {
+				add_core = RUS
+			}
+			set_country_flag = russia_pushes
+			}
+		}
+		push_to_the_bsea = {
+		potential = {
+			tag = RUS
+			NOT = { has_country_flag = black_sea_push }
+		}
+		ai_will_do = { factor = 1 }
+		allow = {
+		NOT = { has_country_flag = black_sea_push }
+			all_core = {owned_by=RUS}
+		}
+		
+		effect = {
+			prestige = 5
+			badboy = 5
+			CRI={any_core={limit={NOT={is_core=RUS}}add_core=RUS}}
+			UKR={any_core={limit={NOT={is_core=RUS}}add_core=RUS}}
+			CIR={any_core={limit={NOT={is_core=RUS}}add_core=RUS}}
+			DAG={any_core={limit={NOT={is_core=RUS}}add_core=RUS}}
+			GZK={any_core={limit={NOT={is_core=RUS}}add_core=RUS}}
+			GEO={any_core={limit={NOT={is_core=RUS}}add_core=RUS}}
+			set_country_flag = black_sea_push
+			}
+		}
+		integrate_ruthenians = {
+		potential = {
+		    NOT={has_country_flag=ruthenians_integrated}
+			tag = RUS
+		}
+		ai_will_do = { factor = 1 }
+		allow = {
+			is_Greater_power = yes
+			958 = {owned_by=RUS}
+			718={owned_by=RUS}
+		}
+		
+		effect = {
+			prestige = 5
+			add_accepted_culture = ukrainian
+			add_accepted_culture = byelorussian
+			set_country_flag = ruthenians_integrated
+			}
+		}
+		
+		russification = {
+		potential = {
+			tag = RUS
+			has_country_flag = russia_pushes
+			 NOT={has_country_flag=russification}
+		}
+		ai_will_do = { factor = 1 }
+		allow = {
+			all_core = {owned_by=RUS}
+		}
+		
+		effect = {
+			prestige = 5
+			add_country_modifier = { name = russification duration = 7250 }
+			set_country_flag = russification
+			}
+			
+		}
+		renovate_petrograd = {
+		potential = {
+			tag = RUS
+			994={owned_by=RUS}
+			has_country_flag = russia_pushes
+			 NOT={has_country_flag=renovated_petrograd}
+		}
+		ai_will_do = { factor = 1 }
+		allow = {
+			money = 25000
+		}
+		
+		effect = {
+			prestige = 10
+			994 = {add_province_modifier = { name = petrograd_renovated duration = 3650 }}
+			treasury = -25000
+			994={add_core=RUS}
+			set_country_flag = renovated_petrograd
+			}
+			
+			
+		}
+		
+	}
+

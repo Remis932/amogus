@@ -1,0 +1,180 @@
+country_event = {
+
+	id = 99999
+
+	trigger = {
+	}
+	
+	fire_only_once = yes
+
+
+	title = "Orthodox Rebellion"
+	desc = "too lazy to write something here"
+	picture = "theosus"
+
+	option = {
+		name = "Theosis Drip!" 
+		TUR = {any_owned = {				
+			limit = {	
+               	owned_by = TUR				
+				pop_majority_religion = orthodox					
+			}
+             secede_province = PTR
+		}
+		any_owned = {				
+			limit = {	
+               	is_core = PTR				
+			}
+             secede_province = PTR
+		}
+		change_tag_no_core_switch =PTR
+	}
+	}
+	option = {
+		name = "Sus!" 
+		TUR = {any_owned = {				
+			limit = {	
+               	owned_by = TUR				
+				pop_majority_religion = orthodox					
+			}
+             secede_province = PTR
+		}
+		any_owned = {				
+			limit = {	
+               	is_core = PTR				
+			}
+             secede_province = PTR
+		}
+		
+	}
+}
+}
+
+country_event = {
+
+	id = 99997
+
+	trigger = {
+	tag=PTR
+   NOT = (war_with = TUR}
+	
+    mean_time_to_happen = { months = 0.0001 }
+	fire_only_once = yes
+	title = "The War is Over!"
+	desc = "too lazy to write something here"
+	picture = "theosus"
+
+	option = {
+	name = "Sus!" 
+	clr_country_flag = orthodox_independence_war		
+	}
+}
+
+country_event = {
+
+	id = 99998
+
+	trigger = {
+	tag=PTR
+	NOT={has_country_flag=orthodox_independence_war}
+	}
+	fire_only_once = yes
+	
+
+mean_time_to_happen =  {
+		months = 6
+
+		modifier = {
+			factor = 0.75 #increase likelihood to happen
+			year = 1870
+		}
+
+
+		modifier = {
+			factor = 0.95 #increase likelihood to happen
+			year = 1900
+		}
+	}
+	title = "The Patriarchate Shatters"
+	desc = "too lazy to write something here"
+	picture = "theosus"
+
+	option = {
+		name = "Sussy!" 
+		PTR = {any_owned = {				
+			limit = {	
+               	owned_by = PTR				
+				is_core=ROM	
+			}
+			remove_core=PTR
+             secede_province = ROM
+		}
+		any_owned = {				
+			limit = {	
+               	owned_by = PTR				
+				is_core=BUL	
+			}
+			remove_core=PTR
+             secede_province = BUL
+		}
+		
+		any_owned = {				
+			limit = {	
+               	owned_by = PTR				
+				is_core=HUN	
+			}
+			remove_core=PTR
+             secede_province = HUN
+		}
+		any_owned = {				
+			limit = {	
+               	owned_by = PTR				
+				is_core=ALB	
+			}
+			remove_core=PTR
+             secede_province = ALB
+		}
+		any_owned = {				
+			limit = {	
+               	owned_by = PTR				
+				is_core=POL	
+			}
+			remove_core=PTR
+             secede_province = POL
+		}
+		any_owned = {				
+			limit = {	
+               	owned_by = PTR				
+				is_core=SLV	
+			}
+			remove_core=PTR
+             secede_province = SLV
+		}
+		any_owned = {				
+			limit = {	
+               	owned_by = PTR				
+				is_core=UKR	
+			}
+			
+             secede_province = UKR
+		}
+		any_owned = {				
+			limit = {	
+               	owned_by = PTR				
+				is_core=RUS	
+			}
+			remove_core=PTR
+             secede_province = RUS
+		}
+		360 = {secede_province = RUS}
+		
+		PTR = {create_vassal = BUL
+		create_vassal = ROM
+		create_vassal = UKR
+		create_vassal = ALB
+		create_vassal = SER}
+	}
+}
+}
+
+

@@ -1,0 +1,22 @@
+political_decisions = {
+
+		
+		sinicization = {
+		potential = {
+			OR = {tag = MNG
+			tag = CHI
+			}
+			 NOT={has_country_flag=sinicization}
+		}
+		ai_will_do = { factor = 1 }
+		allow = {
+			all_core = {owned_by=THIS}
+		}
+		
+		effect = {
+			prestige = 5
+			add_country_modifier = { name = sinicization duration = 7250 }
+			set_country_flag = sinicization
+		}
+	}
+

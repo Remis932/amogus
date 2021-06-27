@@ -1,0 +1,37 @@
+political_decisions={
+north_germanic_union = {
+		potential = {
+		    NOT={has_country_flag=germanics_united}
+			OR={tag = LUB
+			tag=NET
+			tag=SWE
+			tag=DEN
+			tag=NOR
+			tag=NGF
+			tag=GER}
+		}
+		ai_will_do = { factor = 1 }
+		allow = {
+			is_Greater_power = yes
+			376 = {owned_by=THIS}
+			372={owned_by=THIS}
+			322={owned_by=THIS}
+			309={owned_by=THIS}
+			530={owned_by=THIS}
+			549={owned_by=THIS}
+			695={owned_by=THIS}
+			680={owned_by=THIS}
+			690={owned_by=THIS}
+			375={owned_by=THIS}
+		}
+		
+		effect = {
+			prestige = 5
+			add_accepted_culture = dutch
+			add_accepted_culture = north_german
+			add_accepted_culture = swedish
+			add_accepted_culture = norwegian
+			set_country_flag = germanics_united
+			}
+		}
+		}

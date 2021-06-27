@@ -1,0 +1,281 @@
+#Pontifical Italy edits
+political_decisions = {
+	support_orthodoxy = {
+		potential = {
+		NOT = {has_country_flag=supported_orthodoxy}
+		tag = DLM
+	    is_greater_power = yes
+		}
+		
+		allow = {
+			AND = {
+			    has_country_flag=dalmatia_italia
+				is_greater_power = yes
+			}
+		}
+		
+		effect = {
+			prestige = 10
+			TUR = {any_owned = {				
+			limit = {	
+               	OR = {AND={owned_by = TUR		
+				pop_majority_religion = orthodox		
+				NOT = {is_core = TUR} }
+				is_core = ROM
+				is_core = HUN
+				is_core = POL
+				is_core = UKR
+				is_core = SER
+				is_core = MON
+				is_core = GRE
+				is_core = SLV
+				is_core = RUS
+				is_core = LIT
+				}
+			}
+			add_core = PTR	
+            TUR = {secede_province = PTR}			
+		}
+		}
+		TUR = {any_owned = {				
+			limit = {	
+               	is_core= PTR
+			}
+             TUR = {secede_province = PTR}
+		}
+		}
+			leave_alliance = TUR
+			relation = {
+	who = TUR
+	value = -100
+}
+			create_alliance = PTR
+			TUR = {war={target = PTR
+			            attacker_goal = { casus_belli = conquest}
+						}
+						}
+			set_country_flag = supported_orthodoxy
+			TUR = {country_event = 99999}
+		}
+	}
+	
+	
+		
+	sussy_decision = {
+		potential = {
+		tag = DLM
+			X12={vassal_of = DLM}
+		}
+		
+		allow = {
+			AND = {
+			state_n_government = 1
+				is_greater_power = yes
+			}
+		}
+		
+		effect = {
+			prestige = 20
+			add_accepted_culture = south_italian
+			any_owned = {				#Any province owned by the taker
+			limit = {			#for which the follwoing is true:
+				is_core = X12		#It is a core of Republic of Italia
+				NOT = { is_core = DLM }	
+			}
+			add_core = DLM			
+		}
+			inherit = X12
+			add_accepted_culture=north_italian
+			set_country_flag = annexed_roi
+		}
+	}
+	sussy_papal = {
+		potential = {
+			tag = DLM
+			PAP={in_sphere = DLM}
+		}
+		
+		allow = {
+			AND = {
+			state_n_government = 1
+				is_greater_power = yes
+			}
+		}
+		
+		effect = {
+			prestige = 5
+			add_accepted_culture = south_italian
+			any_owned = {				#Any province owned by the taker
+			limit = {			#for which the follwoing is true:
+				is_core = PAP		#It is a core of Republic of Italia
+				NOT = { is_core = DLM }	
+			}
+			add_core = DLM			
+		}
+			inherit = PAP
+			set_country_flag = annexed_pap
+		}
+	}
+	sussy_savoy = {
+		potential = {
+			tag = DLM
+			SVY={in_sphere = DLM}
+		}
+		
+		allow = {
+			AND = {
+			state_n_government = 1
+				is_greater_power = yes
+			}
+		}
+		
+		effect = {
+			prestige = 5
+			add_accepted_culture = south_italian
+			any_owned = {				#Any province owned by the taker
+			limit = {			#for which the follwoing is true:
+				is_core = SVY		#It is a core of Republic of Italia
+				NOT = { is_core = DLM }	
+			}
+			add_core = DLM			
+		}
+			inherit = SVY
+			set_country_flag = annexed_SVY
+		}
+	}
+	prclaim_di = {
+		potential = {
+			tag = DLM
+			not={has_country_flag=dalmatia_italia}
+			
+		}
+		
+		allow = {
+			AND = {
+			state_n_government = 1
+			is_greater_power = yes
+			has_country_flag = annexed_SVY
+			has_country_flag = annexed_roi
+			has_country_flag = annexed_pap
+			}
+		}
+		
+		effect = {
+			prestige = 15
+		472={add_core=DLM}
+		725={add_core=DLM}
+		754={add_core=DLM}
+		757={add_core=DLM}
+		755={add_core=DLM}
+		761={add_core=DLM}
+		756={add_core=DLM}
+		758={add_core=DLM}
+		760={add_core=DLM}
+		759={add_core=DLM}
+		763={add_core=DLM}
+		764={add_core=DLM}
+		762={add_core=DLM}
+		766={add_core=DLM}
+		765={add_core=DLM}
+		473={add_core=DLM}
+			set_country_flag = dalmatia_italia
+		}
+	}
+    		renovate_illyria_nova = {
+		potential = {
+			OR={tag = DLM
+			tag=ITA
+			}
+			 NOT={has_country_flag=renovated_illyria_nova}
+			 782={owned_by=THIS}
+		}
+		ai_will_do = { factor = 1 }
+		allow = {
+		medicine=1
+			money = 50000
+		}
+		
+		effect = {
+			prestige = 10
+			782 = {add_province_modifier = { name = illyria_nova_renovated duration = 3650 }}
+			treasury = -50000
+			
+			set_country_flag = renovated_illyria_nova
+			}
+			
+			
+		}
+		renovate_zara = {
+		potential = {
+			OR={tag = DLM
+			tag=ITA
+			}
+			 NOT={has_country_flag=renovated_zara}
+			 781={owned_by=THIS}
+		}
+		ai_will_do = { factor = 1 }
+		allow = {
+		medicine=1
+			money = 50000
+		}
+		
+		effect = {
+			prestige = 10
+			781 = {add_province_modifier = { name = zara_renovated duration = 3650 }}
+			treasury = -50000
+			
+			set_country_flag = renovated_zara
+			}
+			
+			
+		}
+		renovate_roma = {
+		potential = {
+			OR={tag = DLM
+			tag=ITA
+			}
+			 NOT={has_country_flag=renovated_roma}
+			 749={owned_by=THIS}
+		}
+		ai_will_do = { factor = 1 }
+		allow = {
+		medicine=1
+			money = 50000
+		}
+		
+		effect = {
+			prestige = 10
+			749 = {add_province_modifier = { name = roma_renovated duration = 3650 }}
+			treasury = -50000
+			
+			set_country_flag = renovated_roma
+			}
+			
+			
+		}
+		renovate_milano = {
+		potential = {
+			OR={tag = DLM
+			tag=ITA
+			}
+			 NOT={has_country_flag=renovated_milan}
+			 726={owned_by=THIS}
+		}
+		ai_will_do = { factor = 1 }
+		allow = {
+		medicine=1
+			money = 50000
+		}
+		
+		effect = {
+			prestige = 10
+			726 = {add_province_modifier = { name = milan_renovated duration = 3650 }}
+			treasury = -50000
+			
+			set_country_flag = renovated_milan
+			}
+			
+			
+		}
+		
+}
