@@ -1,0 +1,56 @@
+guarantee=
+{
+	first="FRA"
+	second="UBV"
+	start_date="1816.7.27"
+	end_date="1936.1.1"
+}
+
+guarantee=
+{
+	first="FRM"
+	second="MAI"
+	start_date="1817.5.28"
+	end_date="1936.1.1"
+}
+
+guarantee=
+{
+	first="RUS"
+	second="RIG"
+	start_date="1740.11.19"
+	end_date="1936.1.1"
+}
+
+guarantee=
+{
+	first="SGH"
+	second="MOR"
+	start_date="1797.8.21"
+	end_date="1936.1.1"
+}
+
+guarantee=
+{
+	first="SGH"
+	second="ZAF"
+	start_date="1820.10.10"
+	end_date="1936.1.1"
+}
+
+guarantee=
+{
+	first="KAF"
+	second="ALO"
+	start_date="1802.4.21"
+	end_date="1936.1.1"
+}
+
+guarantee=
+{
+	first="JNP"
+	second="DLH"
+	start_date="1804.10.28"
+	end_date="1936.1.1"
+}
+
